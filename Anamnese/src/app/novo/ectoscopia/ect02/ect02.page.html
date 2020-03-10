@@ -1,0 +1,382 @@
+<ion-content>
+  <form [formGroup]="fGroup" class="bottomTab">
+    <ion-card color="light">
+
+      <ion-card-header color="acard">
+        <ion-card-title class="ion-text-center">
+          <h5><strong>Faneros</strong></h5>
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+
+        <ion-list lines="full">
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>Cabelos</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating"><span>*</span> Tipo de implantação:</ion-label>
+            <ion-input formControlName="faneros_cabelos_tipos_implatacao"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating"><span>*</span> Distribuição:</ion-label>
+            <ion-input formControlName="faneros_cabelos_distribuicao"></ion-input>
+          </ion-item>
+
+
+          <ion-item>
+            <ion-label position="floating"><span>*</span> Quantidade:</ion-label>
+            <ion-input formControlName="faneros_cabelos_quantidade"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating"><span>*</span> Coloração:</ion-label>
+            <ion-input formControlName="faneros_cabelos_coloracao"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating"><span>*</span> Brilho:</ion-label>
+            <ion-input formControlName="faneros_cabelos_brilho"></ion-input>
+          </ion-item>
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>Unhas</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating"><span>*</span> Formato:</ion-label>
+            <ion-input formControlName="faneros_unhas_formato"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating"><span>*</span> Cor:</ion-label>
+            <ion-input formControlName="faneros_unhas_cor"></ion-input>
+          </ion-item>
+
+
+          <ion-item>
+            <ion-label position="floating"><span>*</span> Resistência:</ion-label>
+            <ion-input formControlName="faneros_unhas_resistencia"></ion-input>
+          </ion-item>
+
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+
+    <ion-card color="light">
+
+      <ion-card-header color="acard">
+        <ion-card-title class="ion-text-center">
+          <h5><strong>Pele</strong></h5>
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+
+        <ion-list lines="full">
+
+          <ion-item>
+            <ion-label position="floating"><span>*</span> Coloração:</ion-label>
+            <ion-input formControlName="pele_coloracao"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating"><span>*</span> Continuidade:</ion-label>
+            <ion-input formControlName="pele_continuidade"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating"><span>*</span> Umidade:</ion-label>
+            <ion-input formControlName="pele_umidade"></ion-input>
+          </ion-item>
+
+          <ion-item>
+              <ion-label position="floating"><span>*</span> Temperatura:</ion-label>
+              <ion-input formControlName="pele_temperatura"></ion-input>
+            </ion-item>
+
+          <ion-item>
+            <ion-label position="floating"><span>*</span> Textura:</ion-label>
+            <ion-input formControlName="pele_textura">
+            </ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating"><span>*</span> Espessura:</ion-label>
+            <ion-input formControlName="pele_espessura"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating"><span>*</span> Elasticidade:</ion-label>
+            <ion-input formControlName="pele_elasticidade"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating"><span>*</span> Mobilidade:</ion-label>
+            <ion-input formControlName="pele_mobilidade"></ion-input>
+          </ion-item>
+
+
+          <ion-item>
+            <ion-label position="floating"><span>*</span> Turgor:</ion-label>
+            <ion-input formControlName="pele_turgor"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating"><span>*</span> Sensibilidade:</ion-label>
+            <ion-input formControlName="pele_sensibilidade"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating"><span>*</span> Lesões elementares:</ion-label>
+            <ion-input formControlName="pele_lesoes_elementares"></ion-input>
+          </ion-item>
+
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+
+    <ion-card color="light">
+
+      <ion-card-header color="acard">
+        <ion-card-title class="ion-text-center">
+          <h5><strong>Mucosas</strong></h5>
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list lines="full">
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--Cabeçalho-->
+                <ion-col>
+                  <ion-text>Apresenta Lesões?</ion-text>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+
+          <ion-radio-group formControlName="mucosas_lesoes">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+
+          <!-- Exibir normal -->
+          <ion-item>
+            <ion-label position="floating"><span>*</span> Nivél de Coloração:</ion-label>
+            <ion-select  formControlName="mucosas_coloracao">
+              <ion-select-option value="1">1</ion-select-option>
+              <ion-select-option value="2">2</ion-select-option>
+              <ion-select-option value="3">3</ion-select-option>
+              <ion-select-option value="4">4</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating"><span>*</span> Nivél de hidratação:</ion-label>
+            <ion-select  formControlName="mucosas_hidratacao">
+              <ion-select-option value="1">1</ion-select-option>
+              <ion-select-option value="2">2</ion-select-option>
+              <ion-select-option value="3">3</ion-select-option>
+              <ion-select-option value="4">4</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+
+    <ion-card color="light">
+      <ion-card-header color="acard">
+        <ion-card-title class="ion-text-center">
+          <h5><strong>Tecido celular subcutâneo</strong></h5>
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list lines="full">
+
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--Cabeçalho-->
+                <ion-col>
+                  <ion-text>Espasticidade?</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="tecido_celular_subcutaneo_espasticidade">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--Cabeçalho-->
+                <ion-col>
+                  <ion-text>Flacidez?</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+
+          <ion-radio-group formControlName="tecido_celular_subcutaneo_flacidez">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--Cabeçalho-->
+                <ion-col>
+                  <ion-text>Espessura?</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+
+          <ion-radio-group formControlName="tecido_celular_subcutaneo_espessura">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+
+
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+    <h5 class="ion-text-center"><strong>Ectoscopia página 2</strong></h5>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+          <ion-button color="dark" expand="block"  [routerLink]="['/novo/ectoscopia']">Anterior</ion-button>
+        </ion-col>
+
+        <ion-col size="6">
+          <ion-button color="dark" expand="block"  [routerLink]="['/novo/ect03']">Próximo</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

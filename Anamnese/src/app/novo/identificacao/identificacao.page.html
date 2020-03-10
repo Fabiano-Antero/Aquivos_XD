@@ -1,0 +1,183 @@
+<ion-content>
+  <form [formGroup]="fGroup">
+
+    <ion-card color="light">
+      <img src="../../../assets/img/id.jpg" />
+      <ion-card-header>
+
+        <ion-card-title><span>Identificação</span></ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list>
+
+          <ion-item>
+            <ion-label position="floating"><strong>*</strong> Nome:</ion-label>
+            <ion-input type="text" formControlName="nome">
+            </ion-input>
+          </ion-item>
+          <div *ngIf="fGroup.controls.nome.errors">
+            <p *ngIf="fGroup.controls.nome.errors.minlength" class="ion-padding-start ">Valo mínimo de caracteres é
+              igual a 2!</p>
+            <p *ngIf="fGroup.controls.nome.errors.maxlength" class="ion-padding-start ">O valor máximo de 50 caracteres
+              foi excedido!</p>
+          </div>
+
+          <ion-item>
+            <ion-label position="floating"><strong>*</strong> Idade:</ion-label>
+            <ion-input type="number" formControlName="idade"></ion-input>
+          </ion-item>
+
+          <div *ngIf="fGroup.controls.idade.errors">
+            <p *ngIf="fGroup.controls.idade.errors.max" class="ion-padding-start ">O valor máximo é de 3 digitos!</p>
+          </div>
+
+          <ion-item>
+            <ion-label position="floating"><strong>*</strong> Cútis:</ion-label>
+            <ion-select formControlName="cor">
+              <ion-select-option value="branca">Branca</ion-select-option>
+              <ion-select-option value="negra">Negra</ion-select-option>
+              <ion-select-option value="parda">Parda</ion-select-option>
+              <ion-select-option value="amarela">Amarela</ion-select-option>
+              <ion-select-option value="indigena">Indígena</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating"><strong>*</strong> Esta civil:</ion-label>
+            <ion-select formControlName="estado_civil">
+              <ion-select-option value="solteiro">Solteiro(a)</ion-select-option>
+              <ion-select-option value="casado">Casado(a)</ion-select-option>
+              <ion-select-option value="divorciado">Divorciado(a)</ion-select-option>
+              <ion-select-option value="viuvo">Viúvo(a)</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating"><strong>*</strong> Genero:</ion-label>
+            <ion-select formControlName="sexo">
+              <ion-select-option value="feminino">Feminino</ion-select-option>
+              <ion-select-option value="masculino">Masculino</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating"><strong>*</strong> Orientação Sexual:</ion-label>
+            <ion-select formControlName="posicionamento_sexual">
+              <ion-select-option value="heterosexual">Heterosexual</ion-select-option>
+              <ion-select-option value="Homesexual">Homesexual</ion-select-option>
+              <ion-select-option value="bisexual">Bisexual</ion-select-option>
+              <ion-select-option value="outros">Outros</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating"><strong>*</strong> Nacionalidade:</ion-label>
+            <ion-input type="text" formControlName="nacionalidade"></ion-input>
+          </ion-item>
+          <div *ngIf="fGroup.controls.nacionalidade.errors">
+            <p *ngIf="fGroup.controls.nacionalidade.errors.minlength" class="ion-padding-start ">Valo mínimo de
+              caracteres é
+              igual a 2!</p>
+            <p *ngIf="fGroup.controls.nacionalidade.errors.maxlength" class="ion-padding-start ">O valor máximo de 25
+              caracteres
+              foi excedido!</p>
+          </div>
+
+          <ion-item>
+            <ion-label position="floating"><strong>*</strong> Religião:</ion-label>
+            <ion-input type="text" formControlName="religiao"></ion-input>
+          </ion-item>
+
+          <div *ngIf="fGroup.controls.religiao.errors">
+            <p *ngIf="fGroup.controls.religiao.errors.minlength" class="ion-padding-start ">Valo mínimo de caracteres é
+              igual a 2!</p>
+            <p *ngIf="fGroup.controls.religiao.errors.maxlength" class="ion-padding-start ">O valor máximo de 25
+              caracteres
+              foi excedido!</p>
+          </div>
+
+          <ion-item>
+            <ion-label position="floating"><strong>*</strong> Profissão:</ion-label>
+            <ion-input type="text" formControlName="profissao"></ion-input>
+          </ion-item>
+
+
+          <div *ngIf="fGroup.controls.profissao.errors">
+            <p *ngIf="fGroup.controls.profissao.errors.minlength" class="ion-padding-start ">Valo mínimo de caracteres é
+              igual a 2!</p>
+            <p *ngIf="fGroup.controls.profissao.errors.maxlength" class="ion-padding-start ">O valor máximo de 25
+              caracteres
+              foi excedido!</p>
+          </div>
+
+          <ion-item>
+            <ion-label position="floating"><strong>*</strong> Enfermaria:</ion-label>
+            <ion-input type="text" formControlName="enfermaria"></ion-input>
+          </ion-item>
+
+          <div *ngIf="fGroup.controls.enfermaria.errors">
+
+            <p *ngIf="fGroup.controls.enfermaria.errors.minlength" class="ion-padding-start ">Valo mínimo de caracteres
+              é
+              igual a 2!</p>
+            <p *ngIf="fGroup.controls.enfermaria.errors.maxlength" class="ion-padding-start ">O valor máximo de 50
+              caracteres
+              foi excedido!</p>
+          </div>
+
+          <ion-item>
+            <ion-label position="floating"><strong>*</strong> Leito:</ion-label>
+            <ion-input type="text" formControlName="leito"></ion-input>
+          </ion-item>
+
+          <div *ngIf="fGroup.controls.leito.errors">
+            <p *ngIf="fGroup.controls.leito.errors.minlength" class="ion-padding-start ">Valo mínimo de caracteres é
+              igual a 2!</p>
+            <p *ngIf="fGroup.controls.leito.errors.maxlength" class="ion-padding-start ">O valor máximo de 50 caracteres
+              foi excedido!</p>
+          </div>
+
+          <ion-item>
+            <ion-label position="floating"><strong>*</strong> Hora de início:</ion-label>
+            <ion-datetime displayFormat="MM/DD/YYYY H:mm" formControlName="hora_inicio">
+            </ion-datetime>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+
+
+
+    <ion-card color="light">
+      <ion-card-header>
+        <ion-card-title class="ion-text-center">Queixa Principal? </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            <ion-label></ion-label>
+            <ion-input formControlName="queixa_principal" placeholder="Descreva!"></ion-input>
+          </ion-item>
+
+          <div *ngIf="fGroup.controls.queixa_principal.errors">
+            <p *ngIf="fGroup.controls.queixa_principal.errors.required" class="ion-padding-start ">Campo obrigatóri!</p>
+
+          </div>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </form>
+  <ion-card class="light" class="bottomTab">
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <p>Os campos marcados com asterisco (*) são obrigatórios, lembre-se de preenchelos ou não poderá concluir a
+              anamnese.</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,13 @@
+
+
+
+Exame cardiovascular:
+●	Alterar no tópico de inspeção e palpação a pergunta: “presença abaulamentos?” para “presença de abaulamentos?” ou “apresenta abaulamentos?” 
+
+
+API e depois APP 
+●	Retirar o subtópico “Situação no ciclo cardíaco” na parte de inspeção e palpação 
+
+Obter mais informações
+●	Acrescentar o subtópico “ictus cordis” e nele colocar as variáveis: intensidade, polpas digitais e tipo 
+●	Poderia ser colocado o tópico  de sopro cardíaco já dentro do tópico de ausculta cardíaca, e não como tópicos separados, bem como a parte da ausculta carotídea 

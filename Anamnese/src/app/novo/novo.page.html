@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <!--o cabo de titulo, Novo Paciente, deverá ser subistituido 
+            pelo nome do paciente em todas as telas.-->
+    <ion-card-title color="light" class="ion-text-center">
+      <span class="paciente">
+        Paciente:
+        {{ paciente.nome }}
+      </span>
+    </ion-card-title>
+  </ion-toolbar>
+  <ion-toolbar color="subsecundary">
+    <ion-segment scrollable>
+      <ion-segment-button [routerLink]="['/novo/aluno']">
+        <ion-label>Id do Aluno</ion-label>
+      </ion-segment-button>
+      <ion-segment-button [routerLink]="['/novo/id']">
+        <ion-label>Identificação</ion-label>
+      </ion-segment-button>
+      <ion-segment-button [routerLink]="['/novo/ats']">
+        <ion-label>Antecedentes</ion-label>
+      </ion-segment-button>
+      <ion-segment-button [routerLink]="['/novo/hps']">
+        <ion-label>Hábitos de Vida</ion-label>
+      </ion-segment-button>
+      <ion-segment-button [routerLink]="['/novo/isda']">
+        <ion-label>Isda</ion-label>
+      </ion-segment-button>
+      <ion-segment-button [routerLink]="['/novo/ectoscopia']">
+        <ion-label>Ectoscopia</ion-label>
+      </ion-segment-button>
+      <ion-segment-button [routerLink]="['/novo/er']">
+        <ion-label>Exame Respiratório</ion-label>
+      </ion-segment-button>
+      <ion-segment-button [routerLink]="['/novo/ec']">
+        <ion-label>Exame Cardiovascular</ion-label>
+      </ion-segment-button>
+      <ion-segment-button [routerLink]="['/novo/eda']">
+        <ion-label>Exame do Abdome</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-tabs ></ion-tabs>
+</ion-content>
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button color="secondary" (click)="presentModal()">
+    HDA
+  </ion-fab-button>
+</ion-fab>

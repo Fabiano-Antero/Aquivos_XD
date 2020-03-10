@@ -1,0 +1,70 @@
+<ion-content>
+
+  <ion-card class="light">
+    <ion-card-header>
+      <ion-avatar>
+        <img src="../../../assets/img/friendship.png">
+      </ion-avatar>
+      <ion-card-title class="ion-text-center">
+        <ion-label>ID do aluno</ion-label>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <form [formGroup]="fGroup">
+          <ion-item>
+            <ion-label position="floating"><strong>*</strong> Nome completo:</ion-label>
+            <ion-input type="text" formControlName="nome"></ion-input>
+          </ion-item>
+          <div *ngIf="fGroup.controls.nome.errors">
+
+            <p *ngIf="fGroup.controls.nome.errors.minlength" class="ion-padding-start ">Valo mínimo de caracteres é
+              igual a 2!</p>
+            <p *ngIf="fGroup.controls.nome.errors.maxlength" class="ion-padding-start ">O valor máximo de 50 caracteres
+              foi excedido!</p>
+          </div>
+          <ion-item>
+            <ion-label position="floating"><strong>*</strong> E-mail:</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+          <div *ngIf="fGroup.controls.email.errors">
+            <p *ngIf="fGroup.controls.email.errors.pattern" class="ion-padding-start ">E-mail inválido!</p>
+          </div>
+          <ion-item>
+            <ion-label position="floating"><strong>*</strong> Matrícula:</ion-label>
+            <ion-input type="number" formControlName="matricula"></ion-input>
+          </ion-item>
+          <div *ngIf="fGroup.controls.matricula.errors">
+            <p *ngIf="fGroup.controls.matricula.errors.min" class="ion-padding-start ">Valo mínimo é de digítos 10!</p>
+            <p *ngIf="fGroup.controls.matricula.errors.max" class="ion-padding-start ">O valor máximo é de digítos 10!
+            </p>
+          </div>
+          <ion-item>
+            <ion-label position="floating"><strong>*</strong> Grupo:</ion-label>
+            <ion-input type="text" formControlName="grupo"></ion-input>
+          </ion-item>
+          <div *ngIf="fGroup.controls.grupo.errors">
+
+            <p *ngIf="fGroup.controls.grupo.errors.minlength" class="ion-padding-start ">Valo mínimo de caracteres é
+              igual a 2!</p>
+            <p *ngIf="fGroup.controls.grupo.errors.maxlength" class="ion-padding-start ">O valor máximo de 50 caracteres
+              foi excedido!</p>
+          </div>
+        </form>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="light bottomTab">
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <p>Os campos marcados com asterisco (*) são obrigatórios, lembre-se de preenchelos ou não poderá concluir a
+              anamnese.</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

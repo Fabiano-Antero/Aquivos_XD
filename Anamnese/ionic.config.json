@@ -1,0 +1,7 @@
+{
+  "name": "app2019_1_anamnese_digital",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,440 @@
+<ion-content>
+  <form [formGroup]="fGroup" class="bottomTab">
+
+
+    <ion-item-divider color="asubcard" class="ion-padding">
+      <ion-title class="ion-text-center">
+        Antecedentes pessoais
+      </ion-title>
+    </ion-item-divider>
+
+    <!-- Card Fisiológicos -->
+
+    <ion-card color="light">
+
+      <ion-card-header color="acard">
+        <ion-card-title>
+          <h5 class="ion-text-center"><strong>Fisiológicos </strong></h5>
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list lines="full">
+          <!--Input gestação-->
+
+          <ion-item >
+            <ion-label position="floating"><span>*</span> Gestação e nascimento:</ion-label>
+            <ion-input type="text" formControlName="pessoais_fisiologicos_gestacao_nascimento"></ion-input>
+          </ion-item>
+
+          <div *ngIf="fGroup.controls.pessoais_fisiologicos_gestacao_nascimento.errors">
+            <p *ngIf="fGroup.controls.pessoais_fisiologicos_gestacao_nascimento.errors.maxlength"
+              class="ion-padding-start ">O valor máximo de 250 caracteres
+              foi excedido!</p>
+          </div>
+
+          <!--Input psicomotor-->
+
+          <ion-item >
+            <ion-label class="ion-label" position="floating"><span>*</span> Desenvolvimento psicomotor e neural:
+            </ion-label>
+            <ion-input formControlName="pessoais_fisiologicos_desenvolvimento_psicomotor" type="text"></ion-input>
+          </ion-item>
+
+          <div *ngIf="fGroup.controls.pessoais_fisiologicos_desenvolvimento_psicomotor.errors">
+            <p *ngIf="fGroup.controls.pessoais_fisiologicos_desenvolvimento_psicomotor.errors.maxlength"
+              class="ion-padding-start ">O valor máximo de 250 caracteres
+              foi excedido!</p>
+          </div>
+
+          <!--Input sexual-->
+
+          <ion-item >
+
+            <ion-label position="floating"><span>*</span> Desenvolvimento sexual:</ion-label>
+            <ion-input type="text" formControlName="pessoais_fisiologicos_desenvolvimento_sexual"></ion-input>
+
+          </ion-item>
+
+          <div *ngIf="fGroup.controls.pessoais_fisiologicos_desenvolvimento_sexual.errors">
+            <p *ngIf="fGroup.controls.pessoais_fisiologicos_desenvolvimento_sexual.errors.maxlength"
+              class="ion-padding-start ">O valor máximo de 250 caracteres
+              foi excedido!</p>
+          </div>
+
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Card Patológico -->
+
+
+    <ion-card color="light">
+
+      <ion-card-header color="acard">
+        <ion-card-title class="ion-text-center">
+          <h5><strong>Patológico</strong></h5>
+        </ion-card-title>
+      </ion-card-header>
+
+
+      <ion-card-content>
+        <ion-list lines="full">
+
+          <!--Input-->
+
+          <ion-item >
+            <ion-label position="floating"><span>*</span> Doenças sofridas pelo paciente:</ion-label>
+            <ion-input type="text" formControlName="pessoais_patologico_doencas_sofridas"></ion-input>
+          </ion-item>
+
+
+          <div *ngIf="fGroup.controls.pessoais_patologico_doencas_sofridas.errors">
+            <p *ngIf="fGroup.controls.pessoais_patologico_doencas_sofridas.errors.maxlength" class="ion-padding-start ">
+              O valor máximo de 250 caracteres
+              foi excedido!</p>
+          </div>
+
+          <!--Input-->
+
+          <ion-item >
+            <ion-label position="floating"><span>*</span> Doenças atuais do paciente:</ion-label>
+            <ion-input type="text" formControlName="pessoais_patologico_doencas_atuais">
+            </ion-input>
+          </ion-item>
+
+          <div *ngIf="fGroup.controls.pessoais_patologico_doencas_atuais.errors">
+            <p *ngIf="fGroup.controls.pessoais_patologico_doencas_atuais.errors.maxlength" class="ion-padding-start ">O
+              valor máximo de 250 caracteres
+              foi excedido!</p>
+          </div>
+
+          <ion-item >
+            <ion-label position="floating"><span>*</span> Alergias:</ion-label>
+            <ion-input type="text" formControlName="pessoais_patologico_alergias"></ion-input>
+          </ion-item>
+
+          <div *ngIf="fGroup.controls.pessoais_patologico_alergias.errors">
+            <p *ngIf="fGroup.controls.pessoais_patologico_alergias.errors.maxlength" class="ion-padding-start">O valor
+              máximo de 250 caracteres
+              foi excedido!</p>
+          </div>
+
+          <ion-item >
+            <ion-label position="floating"><span>*</span> Cirurgias:</ion-label>
+            <ion-input type="text" formControlName="pessoais_patologico_cirurgias">
+            </ion-input>
+          </ion-item>
+
+          <div *ngIf="fGroup.controls.pessoais_patologico_cirurgias.errors">
+            <p *ngIf="fGroup.controls.pessoais_patologico_cirurgias.errors.maxlength" class="ion-padding-start">O valor
+              máximo de 250 caracteres
+              foi excedido!</p>
+          </div>
+
+          <!--Inpunt Transfusões-->
+
+          <ion-item >
+            <ion-label position="floating"><span>*</span> Transfusões sanguíneas:</ion-label>
+            <ion-input type="text" formControlName="pessoais_patologico_transfusoes">
+            </ion-input>
+          </ion-item>
+
+          <div *ngIf="fGroup.controls.pessoais_patologico_transfusoes.errors">
+            <p *ngIf="fGroup.controls.pessoais_patologico_transfusoes.errors.maxlength" class="ion-padding-start">O
+              valor máximo de 250 caracteres
+              foi excedido!</p>
+          </div>
+
+          <!--Input Obstétrica-->
+
+          <ion-item >
+            <ion-label position="floating"><span>*</span> História obstétrica:</ion-label>
+            <ion-input type="text" formControlName="pessoais_patologico_historia">
+            </ion-input>
+          </ion-item>
+
+
+          <div *ngIf="fGroup.controls.pessoais_patologico_historia.errors">
+            <p *ngIf="fGroup.controls.pessoais_patologico_historia.errors.maxlength" class="ion-padding-start">O valor
+              máximo de 250 caracteres
+              foi excedido!</p>
+          </div>
+
+
+          <!--Input Medicamentos-->
+
+          <ion-item >
+            <ion-label position="floating"><span>*</span> Medicamentos em uso:</ion-label>
+            <ion-input type="text" formControlName="pessoais_patologico_medicamentos_em_uso">
+            </ion-input>
+          </ion-item>
+
+          <div *ngIf="fGroup.controls.pessoais_patologico_medicamentos_em_uso.errors">
+            <p *ngIf="fGroup.controls.pessoais_patologico_medicamentos_em_uso.errors.maxlength"
+              class="ion-padding-start">O valor máximo de 250 caracteres
+              foi excedido!</p>
+          </div>
+
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card color="light">
+
+      <!--Card Enxaqueca-->
+      <ion-card-header color="acard">
+        <ion-card-title class="ion-text-center">
+          <h5><strong>Antecedente Familiar</strong></h5>
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list lines="full">
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--Cabeçalho-->
+                <ion-col>
+                  <ion-text>Enxaqueca</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <!--Input Enxaqueca-->
+
+          <ion-radio-group formControlName="familia_enxaqueca">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item >
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item >
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item >
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--Cabeçalho-->
+                <ion-col>
+                  <ion-text>Diabetes</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <!--Input Diabetes-->
+
+          <ion-radio-group formControlName="familia_diabetes">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item >
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item >
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item >
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--Cabeçalho-->
+                <ion-col>
+                  <ion-text>HAS</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <!--Input HAS-->
+
+          <ion-radio-group formControlName="familia_has">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item >
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item >
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item >
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--Cabeçalho-->
+                <ion-col>
+                  <ion-text>Alzheimer</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <!--Input Alzheimer-->
+
+          <ion-radio-group formControlName="familia_alzheimer">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item >
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item >
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item >
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--Cabeçalho-->
+                <ion-col>
+                  <ion-text>Cancer</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <!--Input Diabetes-->
+
+          <ion-radio-group formControlName="familia_cancer_valor">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item >
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item >
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item >
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+          <!--Campo Descrição deverá ser ativado ao clicar no checkbox sim-->
+          <ion-item *ngIf="fGroup.value.familia_cancer_valor == 'sim'">
+            <ion-label position="floating"><span>*</span> Especifique:</ion-label>
+            <ion-input type="text" formControlName="familia_cancer_especifique">
+            </ion-input>
+          </ion-item>
+
+          <div *ngIf="fGroup.controls.familia_cancer_especifique.errors">
+            <p *ngIf="fGroup.controls.familia_cancer_especifique.errors.maxlength" class="ion-padding-start">O valor
+              máximo de 250 caracteres
+              foi excedido!</p>
+          </div>
+          <!--Input outros-->
+
+          <ion-item *ngIf="fGroup.value.familia_cancer_valor == 'sim'">
+            <ion-label position="floating"><span>*</span> Outros (Câncer):</ion-label>
+            <ion-input type="text" formControlName="familia_cancer_outros">
+            </ion-input>
+          </ion-item>
+
+          <div *ngIf="fGroup.controls.familia_cancer_outros.errors">
+            <p *ngIf="fGroup.controls.familia_cancer_outros.errors.maxlength" class="ion-padding-start">O valor máximo
+              de 250 caracteres
+              foi excedido!</p>
+          </div>
+
+
+          <!--Campo outros antecedentes-->
+
+
+          <ion-item >
+            <ion-label position="floating"><span>*</span> Outros antecedentes:</ion-label>
+            <ion-input type="text" formControlName="familia_outros"></ion-input>
+          </ion-item>
+
+          <div *ngIf="fGroup.controls.familia_outros.errors">
+            <p *ngIf="fGroup.controls.familia_outros.errors.maxlength" class="ion-padding-start">O valor máximo de 250
+              caracteres
+              foi excedido!</p>
+          </div>
+          
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </form>
+</ion-content>

@@ -1,0 +1,26 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+          <ion-card>
+              <ion-card-header color="secondary">
+                <ion-card-title>História da Doença Atual-HDA</ion-card-title>
+              </ion-card-header>
+            
+              <ion-card-content>
+                <ion-item>
+                    <ion-textarea [(ngModel)]="hda.anotacoes_globais" rows="12" cols="20" placeholder="Entre com sua informação aqui..."></ion-textarea>                   
+                </ion-item>
+                <ion-button color="dark" expand="block" (click)="dismiss()">OK</ion-button>
+              </ion-card-content>
+            </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

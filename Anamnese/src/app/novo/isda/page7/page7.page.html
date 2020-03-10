@@ -1,0 +1,267 @@
+<ion-content>
+  <form [formGroup]="fGroupSh">
+
+    <!-- 
+          ==============================================================
+          Campo Sistema Hemolinfopético
+          ==============================================================
+        -->
+
+    <ion-card color="light">
+
+      <ion-card-header color="acard">
+        <ion-card-title class="ion-text-center">
+          <h5><strong>Sistema Hemolinfopético</strong></h5>
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list lines="full" *ngFor="let lista of sistemaHemolinfopetico">
+
+
+          <!--Campo Sialose-->
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>{{ lista.titulo }}</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="{{ lista.key }}">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>{{ lista.nome1 }}</ion-text>
+                    <ion-radio value="{{ lista.valor1 }}"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>{{ lista.nome2 }}</ion-text>
+                    <ion-radio value="{{ lista.valor2 }}"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>{{ lista.nome3 }}</ion-text>
+                    <ion-radio value="{{ lista.valor3 }}"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+  </form>
+
+  <!-- 
+      ==============================================================
+                                Campo Coluna vertebral, ossos, articulações e extremidades
+                                ==============================================================
+        -->
+  <form [formGroup]="fGroupCv">
+    <ion-card color="light">
+
+      <ion-card-header color="acard">
+        <ion-card-title class="ion-text-center">
+          <h5><strong>Coluna vertebral | Ossos | Articulações e Extremidades</strong></h5>
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list lines="full" *ngFor="let lista of colunaossosArticulacoesExtremidades">
+
+
+          <!--Campo Sialose-->
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>{{ lista.titulo }}</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="{{ lista.key }}">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>{{ lista.nome1 }}</ion-text>
+                    <ion-radio value="{{ lista.valor1 }}"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>{{ lista.nome2 }}</ion-text>
+                    <ion-radio value="{{ lista.valor2 }}"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>{{ lista.nome3 }}</ion-text>
+                    <ion-radio value="{{ lista.valor3 }}"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+  </form>
+
+
+  <!-- 
+          ==============================================================
+          Campos Músculos
+          ==============================================================
+        -->
+ <form [formGroup]="fGroupM">
+    <ion-card color="light">
+
+      <ion-card-header color="acard">
+        <ion-card-title class="ion-text-center">
+          <h5><strong>Músculos</strong></h5>
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list lines="full" *ngFor="let lista of sistemaMuscular">
+
+
+          <!--Campo Sialose-->
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>{{ lista.titulo }}</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="{{ lista.key }}">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>{{ lista.nome1 }}</ion-text>
+                    <ion-radio value="{{ lista.valor1 }}"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>{{ lista.nome2 }}</ion-text>
+                    <ion-radio value="{{ lista.valor2 }}"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>{{ lista.nome3 }}</ion-text>
+                    <ion-radio value="{{ lista.valor3 }}"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+</form>
+
+
+  <!-- 
+          ==============================================================
+          Campos Sistema Nervoso
+          ==============================================================
+        -->
+<form [formGroup]="fGroupN" class="bottomTab">
+
+    <ion-card color="light">
+
+      <ion-card-header color="acard">
+        <ion-card-title class="ion-text-center">
+          <h5><strong>Sistema Nervoso</strong></h5>
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list lines="full" *ngFor="let lista of sistemaNervoso">
+
+
+          <!--Campo Sialose-->
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>{{ lista.titulo }}</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="{{ lista.key }}">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>{{ lista.nome1 }}</ion-text>
+                    <ion-radio value="{{ lista.valor1 }}"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>{{ lista.nome2 }}</ion-text>
+                    <ion-radio value="{{ lista.valor2 }}"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>{{ lista.nome3 }}</ion-text>
+                    <ion-radio value="{{ lista.valor3 }}"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+        </ion-list>
+        <ion-item>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <ion-label>Outros:</ion-label>
+                <ion-input type="text" placeholder="Descreva aqui!" formControlName="outros"></ion-input>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+    <h5 class="ion-text-center"><strong>ISDA última página</strong></h5>
+
+</form>
+</ion-content>

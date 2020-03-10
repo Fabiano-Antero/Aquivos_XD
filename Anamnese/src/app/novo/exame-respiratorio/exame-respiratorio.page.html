@@ -1,0 +1,1005 @@
+<ion-content>
+  <form [formGroup]="fGroup" class="bottomTab">
+
+    <!--card-->
+    <ion-card color="light">
+      <ion-card-header color="acard">
+        <ion-card-title class="ion-text-center">
+          <h5><strong>Presença Cicatriz</strong></h5>
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list lines="full">
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>Presença de cicatriz?</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="respiratorio_presencacicatriz_valor">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+          <!-- Campo Descrição deverá ser ativado ao clicar no checkbox sim-->
+          <ion-item *ngIf="fGroup.value.respiratorio_presencacicatriz_valor == 'sim'">
+            <ion-label position="floating"><span>*</span> Descreva:</ion-label>
+            <ion-input type="text" formControlName="respiratorio_presencacicatriz_motivo"></ion-input>
+          </ion-item>
+
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+
+    <!--card-->
+    <ion-card color="light">
+      <ion-card-header color="acard">
+        <ion-card-title class="ion-text-center">
+          <h5><strong>Palpação</strong></h5>
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list lines="full">
+
+          <ion-item>
+            <ion-label position="floating"><span>*</span> FTV</ion-label>
+            <ion-select formControlName="respiratorio_palpacao_ftv_valor">
+              <ion-select-option value="Aumentado">Aumentado</ion-select-option>
+              <ion-select-option value="Normal">Normal</ion-select-option>
+              <ion-select-option value="Diminuido">Diminuido</ion-select-option>
+              <ion-select-option value="Abolido">Abolido</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <!-- input ftv-->
+          <ion-item>
+            <ion-label position="floating"><span>*</span>Localização da alteração:</ion-label>
+            <ion-input type="text" formControlName="respiratorio_palpacao_ftv_localizacao"></ion-input>
+          </ion-item>
+
+          <div *ngIf="fGroup.controls.respiratorio_palpacao_ftv_localizacao.errors">
+            <p *ngIf="fGroup.controls.respiratorio_palpacao_ftv_localizacao.errors.maxlength"
+              class="ion-padding-start ">O
+              valor máximo de 250 caracteres
+              foi excedido!</p>
+          </div>
+
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>Submaciço</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="respiratorio_palpacao_submacico_valor">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+          <!-- caso sim informar localização-->
+          <ion-item *ngIf="fGroup.value.respiratorio_palpacao_submacico_valor =='sim'">
+            <ion-label position="floating"><span>*</span> Descreva:</ion-label>
+            <ion-input type="text" formControlName="respiratorio_palpacao_submacico_localizacao"></ion-input>
+          </ion-item>
+
+          <!--Manobras de Laségue-->
+          <ion-item>
+            <ion-label position="floating"><span>*</span> Manobras de Laségue</ion-label>
+            <ion-select formControlName="respiratorio_palpacao_manobra_de_lasengue">
+              <ion-select-option value="Expansibilidade preservad">Expansibilidade preservada
+              </ion-select-option>
+              <ion-select-option value="Expansibilidade diminuída">Expansibilidade diminuída
+              </ion-select-option>
+              <ion-select-option value="Expansibilidade assimétrica">Expansibilidade assimétrica
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <!--Manobras de Ruault-->
+          <ion-item>
+            <ion-label position="floating"><span>*</span> Manobras de Ruault</ion-label>
+            <ion-select formControlName="respiratorio_palpacao_manobra_de_ruault">
+              <ion-select-option value="Expansibilidade preservad">Expansibilidade preservada
+              </ion-select-option>
+              <ion-select-option value="Expansibilidade diminuída">Expansibilidade diminuída
+              </ion-select-option>
+              <ion-select-option value="Expansibilidade assimétrica">Expansibilidade assimétrica
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>Percussão</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="respiratorio_palpacao_percussao">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+          <!-- caso sim informar localização-->
+          <ion-item *ngIf="fGroup.value.respiratorio_palpacao_percussao== 'sim'">
+            <ion-label position="floating"><span>*</span> Descreva:</ion-label>
+            <ion-input type="text" formControlName="respiratorio_palpacao_localizacao_percussao"></ion-input>
+          </ion-item>
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>Som pulmonar</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="respiratorio_papacao_som_pulmonar">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>Timpânico</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="respiratorio_palpacao_timpanico">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>Maciço</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="respiratorio_palpacao_macico">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>Presença de dor?</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="respiratorio_palpacao_presencadedor_frequencia_da_dor">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+          <!-- caso sim informar localização-->
+          <ion-item>
+            <ion-label position="floating"><span>*</span>Localização da alteração:</ion-label>
+            <ion-input type="text" formControlName="respiratorio_palpacao_presencadedor_localizacao"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating"><span>*</span> Tipo da dor</ion-label>
+            <ion-select multiple="true" formControlName="respiratorio_palpacao_presencadedor_tipo_da_dor">
+              <ion-select-option value="Queimação">Queimação</ion-select-option>
+              <ion-select-option value="Pontiaguda">Pontiaguda</ion-select-option>
+              <ion-select-option value="Em facada">Em facada</ion-select-option>
+              <ion-select-option value="Constritiva">Constritiva</ion-select-option>
+              <ion-select-option value="Em cólica">Em cólica</ion-select-option>
+              <ion-select-option value="Superficial">Superficial</ion-select-option>
+              <ion-select-option value="Em facada">Em facada</ion-select-option>
+              <ion-select-option value="Profunda">Profunda</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating"><span>*</span> Frequência que aparece a dor</ion-label>
+            <ion-select formControlName="respiratorio_palpacao_presencadedor_frequencia_da_dor">
+              <ion-select-option value="Continua">Continua</ion-select-option>
+              <ion-select-option value="Intermitente">Intermitente</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating"><span>*</span> Intensidade da dor</ion-label>
+            <ion-select formControlName="respiratorio_palpacao_presencadedor_intensidade_da_dor">
+              <ion-select-option value="01">01</ion-select-option>
+              <ion-select-option value="02">02</ion-select-option>
+              <ion-select-option value="03">03</ion-select-option>
+              <ion-select-option value="04">04</ion-select-option>
+              <ion-select-option value="05">05</ion-select-option>
+
+            </ion-select>
+          </ion-item>
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>Dor irradiada?</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="respiratorio_palpacao_presencadedor_dorirradia_valor">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+          <!--caso sim-->
+
+          <ion-item *ngIf="fGroup.value.respiratorio_palpacao_presencadedor_dorirradia_valor == 'sim'">
+            <ion-label position="floating"><span>*</span> Frequência que aparece a dor</ion-label>
+            <ion-select formControlName="respiratorio_palpacao_presencadedor_dorirradia_frequencia">
+              <ion-select-option value="Continua">Continua</ion-select-option>
+              <ion-select-option value="Intermitente">Intermitente</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item *ngIf="fGroup.value.respiratorio_palpacao_presencadedor_dorirradia_valor == 'sim'">
+            <ion-label>Intensidade da dor</ion-label>
+            <ion-select formControlName="respiratorio_palpacao_presencadedor_intensidade">
+              <ion-select-option value="01">01</ion-select-option>
+              <ion-select-option value="02">02</ion-select-option>
+              <ion-select-option value="03">03</ion-select-option>
+              <ion-select-option value="04">04</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>Fatores que pioram a dor?</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="respiratorio_palpacao_presencadedor_fatores_que_pioram_a_dor">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+    <!--card-->
+    <ion-card color="light">
+      <ion-card-header color="acard">
+        <ion-card-title class="ion-text-center">
+          <h5><strong>Ausculta Pulmonar</strong></h5>
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list lines="full">
+
+          <!--Murmurio versicular presente-->
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>Múrmurio Vesicular Presente</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="respiratorio_auscultapulmonar_murmurio_vesicular_presente">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+          <!--murmurio versicular abolido-->
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>Múrmurio Vesicular Abolido</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="respiratorio_auscultapulmonar_murmuriovesicular_valor">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+          <ion-item *ngIf="fGroup.value.respiratorio_auscultapulmonar_murmuriovesicular_valor =='sim'">
+            <ion-label position="floating"><span>*</span> Localização da Alteração</ion-label>
+            <ion-input type="text" formControlName="respiratorio_auscultapulmonar_murmuriovesicular_localizacao">
+            </ion-input>
+          </ion-item>
+
+          <!--murmurio vesicular sonoridade-->
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>Múrmurio Versicular sonoridade</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="respiratorio_auscultapulmonar_murmurio_vesicular_sonoridade">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+          <!--Roncos-->
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>Roncos</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="respiratorio_auscultapulmonar_roncos_valor">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+          <ion-item *ngIf="fGroup.value.respiratorio_auscultapulmonar_roncos_valor == 'sim'">
+            <ion-label position="floating"><span>*</span> Localização da Alteração</ion-label>
+            <ion-input type="text" formControlName="respiratorio_auscultapulmonar_roncos_localizacao"></ion-input>
+          </ion-item>
+
+          <!--Sibilos-->
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>Sibilos</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="respiratorio_auscultapulmonar_sibilos_valor">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+          <ion-item *ngIf="fGroup.value.respiratorio_auscultapulmonar_sibilos_valor == 'sim'">
+            <ion-label position="floating"><span>*</span> Localização da Alteração</ion-label>
+            <ion-input type="text" formControlName="respiratorio_auscultapulmonar_sibilos_localizacao">
+            </ion-input>
+          </ion-item>
+
+          <!--Estritor-->
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>Estritor</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="respiratorio_auscultapulmonar_estritor_valor">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+          <ion-item *ngIf="fGroup.value.respiratorio_auscultapulmonar_estritor_valor == 'Sim'">
+            <ion-label position="floating"><span>*</span> Localização da Alteração</ion-label>
+            <ion-input type="text" formControlName="respiratorio_auscultapulmonar_estritor_localizacao">
+            </ion-input>
+          </ion-item>
+
+          <!--Estritor Fino-->
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>Estritor Fino</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="respiratorio_auscultapulmonar_estritorfino_valor">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+          <ion-item *ngIf="fGroup.value.respiratorio_auscultapulmonar_estritorfino_valor == 'sim'">
+            <ion-label position="floating"><span>*</span> Localização da Alteração</ion-label>
+            <ion-input type="text" formControlName="respiratorio_auscultapulmonar_estritorfino_localizacao">
+            </ion-input>
+          </ion-item>
+
+          <!--Estritor Grosso-->
+
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>Estritor Grosso</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="respiratorio_auscultapulmonar_estritorgrosso_valor">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+          <ion-item *ngIf="fGroup.value.respiratorio_auscultapulmonar_estritorgrosso_valor == 'sim'">
+            <ion-label position="floating"><span>*</span> Localização da Alteração</ion-label>
+            <ion-input type="text" formControlName="respiratorio_auscultapulmonar_estritorgrosso_localizacao">
+            </ion-input>
+          </ion-item>
+
+          <!--Sopro-->
+
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>Sopro</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="respiratorio_auscultapulmonar_sopro_valor">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+          <ion-item *ngIf="fGroup.value.respiratorio_auscultapulmonar_sopro_valor == 'sim'">
+            <ion-label position="floating"><span>*</span> Localização da Alteração</ion-label>
+            <ion-input type="text" formControlName="respiratorio_auscultapulmonar_sopro_localizacao"></ion-input>
+          </ion-item>
+
+          <!--Atrito Pleural-->
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>Atrito Pleural</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="respiratorio_auscultapulmonar_atritopleural_valor">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+          <ion-item *ngIf="fGroup.value.respiratorio_auscultapulmonar_atritopleural_valor == 'sim'">
+            <ion-label position="floating"><span>*</span> Localização da Alteração</ion-label>
+            <ion-input type="text" formControlName="respiratorio_auscultapulmonar_atritopleural_localizacao">
+            </ion-input>
+          </ion-item>
+
+          <!--Ausculta da voz-->
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>Ausculta da voz</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating"><span>*</span> Ausculta</ion-label>
+            <ion-select formControlName="respiratorio_auscultapulmonar_auscultavoz_valor">
+              <ion-select-option value="Ressonância-vocal-normal">Ressonância vocal normal</ion-select-option>
+              <ion-select-option value="Ressonância-vocal-diminuida">Ressonância vocal diminuida
+              </ion-select-option>
+              <ion-select-option value="Ressonância-vocal-aumentada">Ressonância vocal aumentada
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <!--caso seja ressonacia vocal aumentada abilitar as proximas linhas-->
+
+          <ion-item
+            *ngIf="fGroup.value.respiratorio_auscultapulmonar_auscultavoz_valor == 'Ressonância-vocal-aumentada'">
+            <ion-label position="floating"><span>*</span> Ausculta Aumentada</ion-label>
+            <ion-select formControlName="respiratorio_auscultapulmonar_auscultavoz_ressonancia_aumentada">
+              <ion-select-option value="Broncofonia">Broncofonia</ion-select-option>
+              <ion-select-option value="Pectorilóquia fônica">Pectorilóquia fônica</ion-select-option>
+              <ion-select-option value="Pectorilóquia afônica">Pectorilóquia afônica</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </form>
+</ion-content>

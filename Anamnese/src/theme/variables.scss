@@ -1,0 +1,181 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+
+/** Ionic CSS Variables **/
+:root {
+
+  .btn-padding{
+    margin-left: 85px;
+  }
+  .btn-padding2{
+    margin-left: 128px;
+  }
+  //subsecundary
+  --ion-color-subsecondary: #05d6cc;
+  --ion-color-subsecondary-rgb: 12, 209, 232;
+  --ion-color-subsecondary-contrast: #01a59d;
+  --ion-color-subsecondary-contrast-rgb: 2, 73, 69;
+  --ion-color-subsecondary-shade: #04afa6;
+  --ion-color-subsecondary-tint: #1ecdc4;
+     
+    /** asubcard**/
+  --ion-color-asubcard: #e9e6e6;
+  --ion-color-asubcard-rgb: 12, 209, 232;
+  --ion-color-asubcard-contrast: #333333;
+  --ion-color-asubcard-contrast-rgb: 255, 255, 255;
+  --ion-color-asubcard-shade: #6abfd8;
+  --ion-color-asubcard-tint: #86ddf6;
+ 
+  /** acard **/
+  --ion-color-acard: #78d9f5;
+  --ion-color-acard-rgb: 12, 209, 232;
+  --ion-color-acard-contrast: #26355d;
+  --ion-color-acard-contrast-rgb: 255, 255, 255;
+  --ion-color-acard-shade: #6abfd8;
+  --ion-color-acard-tint: #86ddf6;
+ 
+  /** primary **/
+  --ion-color-primary: #3880ff;
+  --ion-color-primary-rgb: 92, 93, 96;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #3171e0;
+  --ion-color-primary-tint: #4c8dff;
+
+  /** secondary **/
+  --ion-color-secondary: #05c7bd;
+  --ion-color-secondary-rgb: 12, 209, 232;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #04afa6;
+  --ion-color-secondary-tint: #1ecdc4;
+
+  /** tertiary **/
+  --ion-color-tertiary: #7044ff;
+  --ion-color-tertiary-rgb: 112, 68, 255;
+  --ion-color-tertiary-contrast: #ffffff;
+  --ion-color-tertiary-contrast-rgb: 255, 255, 255;
+  --ion-color-tertiary-shade: #633ce0;
+  --ion-color-tertiary-tint: #7e57ff;
+
+  /** success **/
+  --ion-color-success: #05a581;
+  --ion-color-success-rgb: 16, 220, 96;
+  --ion-color-success-contrast: #ffffff;
+  --ion-color-success-contrast-rgb: 255, 255, 255;
+  --ion-color-success-shade: #049172;
+  --ion-color-success-tint: #1eae8e;
+
+  /** warning **/
+  --ion-color-warning: #ffce00;
+  --ion-color-warning-rgb: 255, 206, 0;
+  --ion-color-warning-contrast: #ffffff;
+  --ion-color-warning-contrast-rgb: 255, 255, 255;
+  --ion-color-warning-shade: #e0b500;
+  --ion-color-warning-tint: #ffd31a;
+
+  /** danger **/
+  --ion-color-danger: #f04141;
+  --ion-color-danger-rgb: 245, 61, 61;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-contrast-rgb: 255, 255, 255;
+  --ion-color-danger-shade: #d33939;
+  --ion-color-danger-tint: #f25454;
+
+  /** dark **/
+  --ion-color-dark: #222428;
+  --ion-color-dark-rgb: 34, 34, 34;
+  --ion-color-dark-contrast: #ffffff;
+  --ion-color-dark-contrast-rgb: 255, 255, 255;
+  --ion-color-dark-shade: #1e2023;
+  --ion-color-dark-tint: #383a3e;
+
+  /** medium **/
+  --ion-color-medium: #989aa2;
+  --ion-color-medium-rgb: 152, 154, 162;
+  --ion-color-medium-contrast: #ffffff;
+  --ion-color-medium-contrast-rgb: 255, 255, 255;
+  --ion-color-medium-shade: #86888f;
+  --ion-color-medium-tint: #a2a4ab;
+
+  /** light **/
+  --ion-color-light: #f4f5f8;
+  --ion-color-light-rgb: 244, 244, 244;
+  --ion-color-light-contrast: #000000;
+  --ion-color-light-contrast-rgb: 0, 0, 0;
+  --ion-color-light-shade: #d7d8da;
+  --ion-color-light-tint: #f5f6f9;
+}
+/** vavoritas **/
+
+/**cor pesolaizada paraca os cabeçalhos de card etc da anamnese**/
+.ion-color-acard {
+  --ion-color-base: #78d9f5;
+  --ion-color-base-rgb: 12, 209, 232;
+  --ion-color-contrast: #26355d;
+  --ion-color-contrast-rgb: 255, 255, 255;
+  --ion-color-shade: #6abfd8;
+  --ion-color-tint: #86ddf6;
+}
+.ion-color-asubcard {
+  --ion-color-base: #e9e6e6;
+  --ion-color-base-rgb: 12, 209, 232;
+  --ion-color-contrast: #333333;
+  --ion-color-contrast-rgb: 255, 255, 255;
+  --ion-color-shade: #6abfd8;
+  --ion-color-tint: #86ddf6;
+}
+
+.ion-color-subsecundary{
+
+  --ion-color-base: #05d6cc;
+  --ion-color-base-rgb: 12, 209, 232;
+  --ion-color-contrast: #01a59d;
+  --ion-color-contrast-rgb: 2, 73, 69;
+  --ion-color-shade: #04afa6;
+  --ion-color-tint: #1ecdc4;
+}
+
+/* Set variables for all modes */
+:root {
+
+  btn-padding{
+    margin-left: 50%;
+  }
+
+  /* Set the background of the entire app */
+  --ion-background-color: #f4f5f8;
+
+  
+
+  /* Set the font family of the entire app */
+  --ion-font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Roboto", sans-serif;
+}
+
+/* Set text color of the entire app for iOS only */
+.ios {
+  --ion-text-color: rgb(36, 36, 36);
+  
+
+  ion-segment-button {
+    min-width: 125px;
+    border: none;
+  }
+  
+  
+}
+
+/* Set text color of the entire app for Material Design only */
+.md {
+  --ion-text-color: rgb(36, 36, 36);
+  ion-radio{
+    margin-left: 6px;
+  }
+  
+  ion-button {
+    font-size: 10px;
+    height: 45px;
+    border-radius: 150px;
+  }
+  
+}

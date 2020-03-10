@@ -1,0 +1,381 @@
+<ion-content>
+  <form [formGroup]="fGroup" class="bottomTab">
+    <ion-card color="light">
+
+      <ion-card-header color="acard">
+        <ion-card-title class="ion-text-center">
+          <h5><strong>Inspeção e Palpação</strong></h5>
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list lines="full">
+
+          <!--Lesões elementares-->
+
+
+          <ion-item>
+            <ion-label position="floating"><span>*</span> Lesões elementares:</ion-label>
+            <ion-input formControlName="cardiovascular_inspecaoepalpacao_lesoes_elementares"></ion-input>
+          </ion-item>
+
+          <div *ngIf="fGroup.controls.cardiovascular_inspecaoepalpacao_lesoes_elementares.errors">
+            <p *ngIf="fGroup.controls.cardiovascular_inspecaoepalpacao_lesoes_elementares.errors.maxlength"
+              class="ion-padding-start ">O valor máximo de 250 caracteres
+              foi excedido!</p>
+          </div>
+
+          <!--Presença Abaulamento-->
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>Apresenta abaulamentos?</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="cardiovascular_inspecaoepalpacao_presenca_de_abaulamento">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+          <!--Turgencia jugular-->
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>Turgência jugular</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="cardiovascular_inspecaoepalpacao_turgencia_jugular">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+          <!--Fremito cardiovascular-->
+
+          <ion-item>
+            <ion-label position="floating"><span>*</span>Frêmito Cardiovascular:</ion-label>
+            <ion-select formControlName="cardiovascular_inspecaoepalpacao_fremitocardiovascular_valor">
+              <ion-select-option value="Presente">Presente</ion-select-option>
+              <ion-select-option value="Ausente">Ausente</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+
+
+          <!--caso presente-->
+          <div *ngIf="fGroup.value.cardiovascular_inspecaoepalpacao_fremitocardiovascular_valor == 'Presente'">
+
+            <ion-item>
+              <ion-label position="floating"><span>*</span>Localização</ion-label>
+              <ion-select formControlName="cardiovascular_inspecaoepalpacao_fremitocardiovascular_localizacao">
+                <ion-select-option value="Foco-Aortico">Foco Aórtico</ion-select-option>
+                <ion-select-option value="Foco-Pulmonar">Foco Pulmonar</ion-select-option>
+                <ion-select-option value="Foco-Aortico-Acessorio">Foco Aórtico Acessório</ion-select-option>
+                <ion-select-option value="Foco-Tricuspide">Foco Tricúspide</ion-select-option>
+                <ion-select-option value="Foco-Mitral">Foco Mitral</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating"><span>*</span>Localização detalhe</ion-label>
+              <ion-input formControlName="cardiovascular_inspecaoepalpacao_localizacao_fremito">
+              </ion-input>
+            </ion-item>
+
+            <div *ngIf="fGroup.controls.cardiovascular_inspecaoepalpacao_localizacao_fremito.errors">
+              <p *ngIf="fGroup.controls.cardiovascular_inspecaoepalpacao_localizacao_fremito.errors.maxlength"
+                class="ion-padding-start ">O valor máximo de 250 caracteres
+                foi excedido!</p>
+            </div>
+
+            <ion-item>
+              <ion-label position="floating"><span>*</span>Situação do ciclo cardiaco</ion-label>
+              <ion-input
+                formControlName="cardiovascular_inspecaoepalpacao_fremitocardiovascular_situacao_ciclo_cardiaco">
+              </ion-input>
+            </ion-item>
+            <div *ngIf="fGroup.controls.cardiovascular_inspecaoepalpacao_fremitocardiovascular_situacao_ciclo_cardiaco.errors">
+              <p *ngIf="fGroup.controls.cardiovascular_inspecaoepalpacao_fremitocardiovascular_situacao_ciclo_cardiaco.errors.maxlength"
+                class="ion-padding-start ">O valor máximo de 250 caracteres
+                foi excedido!</p>
+            </div>
+
+            <ion-item>
+              <ion-label position="floating"><span>*</span>Intencidade</ion-label>
+              <ion-select formControlName="cardiovascular_inspecaoepalpacao_fremitocardiovascular_intensidade">
+                <ion-select-option value=1>1</ion-select-option>
+                <ion-select-option value=2>2</ion-select-option>
+                <ion-select-option value=3>3</ion-select-option>
+                <ion-select-option value=4>4</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </div>
+
+          <!--Situação no ciclo cardiaco
+          <ion-item>
+            <ion-label position="floating"><span>*</span>Situação no Ciclo Cardiaco:</ion-label>
+            <ion-select formControlName="cardiovascular_inspecaoepalpacao_situacao_do_ciclo">
+              <ion-select-option value="Sístolico">Sístolico</ion-select-option>
+              <ion-select-option value="Diastólico">Diastólico</ion-select-option>
+            </ion-select>
+          </ion-item>
+          -->
+          <!--Intensidade-->
+
+          <ion-item>
+            <ion-label position="floating"><span>*</span>Intensidade:</ion-label>
+            <ion-select formControlName="cardiovascular_inspecaoepalpacao_intensidade">
+              <ion-select-option value="1">1</ion-select-option>
+              <ion-select-option value="2">2</ion-select-option>
+              <ion-select-option value="3">3</ion-select-option>
+              <ion-select-option value="4">4</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <!--Polpas digitais-->
+
+
+          <!--caso presente-->
+
+          <ion-item>
+            <ion-label position="floating"><span>*</span>Polpas Digitais:</ion-label>
+            <ion-select formControlName="cardiovascular_inspecaoepalpacao_polpas_digitais">
+              <ion-select-option value="1">1</ion-select-option>
+              <ion-select-option value="2">2</ion-select-option>
+              <ion-select-option value="3">3</ion-select-option>
+              <ion-select-option value="4">4</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating"><span>*</span>Tipo:</ion-label>
+            <ion-select formControlName="cardiovascular_inspecaoepalpacao_tipo_polpa_digital">
+              <ion-select-option value="Propulsivo">Propulsivo</ion-select-option>
+              <ion-select-option value="Difuso">Difuso</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <!--Ausculta cardiaca-->
+
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card color="light">
+
+      <!--card-->
+      <ion-card-header color="acard">
+        <ion-card-title class="ion-text-center">
+          <h5><strong>Ausculta Cardiaca</strong></h5>
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list lines="full">
+
+          <!--Frequencia Cardiaca-->
+
+
+
+          <ion-item>
+            <ion-label position="floating"><span>*</span>Frequencia Cardiaca:</ion-label>
+            <ion-select formControlName="cardiovascular_auscultacardiaca_frequencia_cardiaca">
+              <ion-select-option value="Taquicardio">Taquicardio</ion-select-option>
+              <ion-select-option value="Bradicardio">Bradicardio</ion-select-option>
+              <ion-select-option value="Eucardio">Eucardio</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <!--Ritmo Cardiaco-->
+
+          <ion-item>
+            <ion-label position="floating"><span>*</span>Ritmos Cardiacos:</ion-label>
+            <ion-select formControlName="cardiovascular_auscultacardiaca_ritmo_cardiaco">
+              <ion-select-option value="2 Tempos">2 Tempos</ion-select-option>
+              <ion-select-option value="3 Tempos">3 Tempos</ion-select-option>
+              <ion-select-option value="4 Tempos">4 Tempos</ion-select-option>
+              <ion-select-option value="Regular">Regular</ion-select-option>
+              <ion-select-option value="Irregular">Irregular</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <!--Intensicade do som-->
+
+
+
+          <ion-item>
+            <ion-label position="floating"><span>*</span>Intensidade do Som:</ion-label>
+            <ion-select formControlName="cardiovascular_auscultacardiaca_intensidade_do_som">
+              <ion-select-option value="Normofonetico">Normofonético</ion-select-option>
+              <ion-select-option value="Hiperfonetico">Hiperfonético</ion-select-option>
+              <ion-select-option value="Hipofonetico">Hipofonético</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card color="light">
+
+      <!--card-->
+      <ion-card-header color="acard">
+        <ion-card-title class="ion-text-center">
+          <h5><strong>Sopro Cardiaco</strong></h5>
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list lines="full">
+
+          <!--Foco-->
+
+
+          <ion-item>
+            <ion-label position="floating"><span>*</span>Foco Cardiaco:</ion-label>
+            <ion-select formControlName="cardiovascular_soprocardiaco_foco">
+              <ion-select-option value="Pulmonar">Pulmonar</ion-select-option>
+              <ion-select-option value="Aortico">Aórtico</ion-select-option>
+              <ion-select-option value="Aortico-Acessorio">Aórtico Acessório</ion-select-option>
+              <ion-select-option value="Tricuspide">Tricúspide</ion-select-option>
+              <ion-select-option value="Mitral">Mitral</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <!--Intensidade-->
+
+
+          <ion-item>
+            <ion-label position="floating"><span>*</span>Intensidade Cardiaca:</ion-label>
+            <ion-select formControlName="cardiovascular_soprocardiaco_intensidade">
+              <ion-select-option value="+">1</ion-select-option>
+              <ion-select-option value="++">2</ion-select-option>
+              <ion-select-option value="+++">3</ion-select-option>
+              <ion-select-option value="+++">4</ion-select-option>
+
+            </ion-select>
+          </ion-item>
+
+
+          <ion-item>
+            <ion-label position="floating"><span>*</span>Ciclo Cardiaco:</ion-label>
+            <ion-select formControlName="cardiovascular_soprocardiaco_relacao_ciclo_cardiaco">
+              <ion-select-option value="Sístolico">Sístolico</ion-select-option>
+              <ion-select-option value="Diastólico">Diastólico</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+
+
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+    <!--card-->
+
+    <ion-card>
+
+      <ion-card-header color="acard">
+        <ion-card-title class="ion-text-center">
+          <h5><strong>Ausculta Carotídea</strong></h5>
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list lines="full">
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>Presença de Sopro</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="cardiovascular_auscultacarotidea_presenca_de_sopro">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </form>
+</ion-content>

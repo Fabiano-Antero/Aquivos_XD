@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <!--<ion-menu-button></ion-menu-button>-->
+    </ion-buttons>
+    <ion-title class="ion-text-center">
+      {{ titulo.title }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+<ion-grid >
+  <ion-row>
+      <ion-col size="12" if='true' size-lg>
+
+          <ion-card color="light" class="welcome-card">
+            <ion-img [src]="home.url"></ion-img>
+            <ion-card-header>
+              <ion-card-title class="title">{{ home.welcome }}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content class="ion-text-center">
+              <p>{{ home.msg }}</p>
+            </ion-card-content>
+          </ion-card>
+   </ion-col>
+  </ion-row>
+<ion-row>
+      <ion-col size="12" if='true' size-md>
+          <ion-card color="light">
+            <ion-card-header>
+              <ion-card-title class="title">{{ home.dv }}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-button expand="block" color="danger">
+                {{ home.init }}
+                <ion-icon slot="end" name="play"></ion-icon>
+              </ion-button>
+            </ion-card-content>
+          </ion-card>
+      </ion-col>
+       <ion-col size="12" if='true' size-md>
+
+
+          <ion-card color="light">
+            <ion-card-header>
+              <ion-card-title class="title">{{ home.novo }}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-button expand="block" [routerLink]="['/novo']">
+                {{ home.criar }}
+                <ion-icon slot="end" name="person-add"></ion-icon>
+              </ion-button>
+            </ion-card-content>
+          </ion-card>
+     </ion-col>
+      <ion-col size="12"  if='true' size-md>
+
+
+          <ion-card color="light">
+            <ion-card-header>
+              <ion-card-title class="title">{{ home.lista }}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-button expand="block" color="success" [routerLink]="['/listanamnese']">
+                {{ home.ace }}
+                <ion-icon slot="end" name="archive"></ion-icon>
+              </ion-button>
+            </ion-card-content>
+        </ion-card>
+        </ion-col>
+     </ion-row>
+    </ion-grid>
+
+
+</ion-content>

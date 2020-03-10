@@ -1,0 +1,338 @@
+<ion-content>
+  <form [formGroup]="fGroup" class="bottomTab">
+    <ion-card color="light">
+      <img src="../../../assets/img/hps.jpg" />
+
+      <ion-card-content>
+        <ion-list lines="full">
+          <ion-item>
+            <ion-label position="floating"><strong>*</strong> Alimentação:</ion-label>
+            <ion-select formControlName="alimentacao">
+              <ion-select-option value="Regular">Regular</ion-select-option>
+              <ion-select-option value="Irregular">Irregular</ion-select-option>
+              <ion-select-option value="Adequada">Adequada</ion-select-option>
+              <ion-select-option value="Inadequada">Inadequada</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating"><strong>*</strong> Habitação:</ion-label>
+            <ion-select formControlName="habitacao">
+              <ion-select-option value="Alvenaria">Alvenaria</ion-select-option>
+              <ion-select-option value="Barro">Barro</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating"><strong>*</strong> Atividade física:</ion-label>
+            <ion-select formControlName="atividades_fisicas">
+              <ion-select-option value="Regulares">Regular</ion-select-option>
+              <ion-select-option value="Irregulares">Irregular</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating"><strong>*</strong> Lazer:</ion-label>
+            <ion-input  formControlName="lazer"></ion-input>
+          </ion-item>
+
+          <div *ngIf="fGroup.controls.lazer.errors">
+            <p *ngIf="fGroup.controls.lazer.errors.maxlength" class="ion-padding-start ">O valor máximo de 250
+              caracteres
+              foi excedido!</p>
+          </div>
+
+          <ion-item>
+            <ion-label position="floating"><strong>*</strong> Consumo de álcool</ion-label>
+            <ion-select formControlName="consumo_alcool">
+              <ion-select-option value="Social">Social</ion-select-option>
+              <ion-select-option value="Dependente">Dependente</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating"><strong>*</strong> Uso de drogas ilícitas</ion-label>
+            <ion-select formControlName="drogas_valor">
+              <ion-select-option value="Nenhuma">Nenhuma</ion-select-option>
+              
+              <ion-select-option value="Maconha">Maconha</ion-select-option>
+              <ion-select-option value="Chack">Chack</ion-select-option>
+              <ion-select-option value="LSD">LSD</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating"><strong>*</strong> Outras:</ion-label>
+            <ion-input  formControlName="drogas_outros"></ion-input>
+          </ion-item>
+
+          <div *ngIf="fGroup.controls.drogas_outros.errors">
+            <p *ngIf="fGroup.controls.drogas_outros.errors.maxlength" class="ion-padding-start ">O valor máximo de 250
+              caracteres
+              foi excedido!</p>
+          </div>
+
+          <ion-item>
+            <ion-label position="floating"><strong>*</strong> Tomou banho em:</ion-label>
+            <ion-select formControlName="banho_valor">
+              <ion-select-option value="Rios">Rio</ion-select-option>
+              <ion-select-option value="Açudes">Açude</ion-select-option>
+              <ion-select-option value="Lagoas">Lagoa</ion-select-option>
+              <ion-select-option value="Praia">Praia</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating"><strong>*</strong> Frequência:</ion-label>
+            <ion-input  formControlName="banho_frequencia">
+            </ion-input>
+          </ion-item>
+
+          <div *ngIf="fGroup.controls.banho_frequencia.errors">
+            <p *ngIf="fGroup.controls.banho_frequencia.errors.maxlength" class="ion-padding-start ">O valor máximo de
+              250 caracteres
+              foi excedido!</p>
+          </div>
+
+          <ion-item>
+            <ion-label position="floating"><strong>*</strong> Último banho:</ion-label>
+            <ion-input  formControlName="banho_ultimo_banho"></ion-input>
+          </ion-item>
+          <ion-item>
+
+            <div *ngIf="fGroup.controls.banho_ultimo_banho.errors">
+              <p *ngIf="fGroup.controls.banho_ultimo_banho.errors.maxlength" class="ion-padding-start ">O valor máximo
+                de 250 caracteres
+                foi excedido!</p>
+            </div>
+
+            <ion-label position="floating"><strong>*</strong> Contato com Animais?</ion-label>
+            <ion-select multiple formControlName="contato_animais">
+              <ion-select-option value="gato">Gato</ion-select-option>
+              <ion-select-option value="cachorro">Cachorro</ion-select-option>
+              <ion-select-option value="pássaro">Pássaro</ion-select-option>
+              <ion-select-option value="peixe">Peixe</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>Contato com triatomíneo?</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+
+          <ion-radio-group formControlName="contato_triatomineo">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+          <ion-item>
+            <ion-label position="floating"><strong>*</strong> Condições sociais:</ion-label>
+            <ion-input  formControlName="condicoes_sociais"></ion-input>
+          </ion-item>
+
+          <div *ngIf="fGroup.controls.condicoes_sociais.errors">
+            <p *ngIf="fGroup.controls.condicoes_sociais.errors.maxlength" class="ion-padding-start ">O valor máximo de
+              250 caracteres
+              foi excedido!</p>
+          </div>
+
+          <!--Verificar campo condições culturais-->
+          <ion-item>
+            <ion-label position="floating"><strong>*</strong> Condições Culturais:</ion-label>
+            <ion-input  formControlName="condicoes_culturais"> </ion-input>
+          </ion-item>
+
+          <div *ngIf="fGroup.controls.condicoes_culturais.errors">
+            <p *ngIf="fGroup.controls.condicoes_culturais.errors.maxlength" class="ion-padding-start ">O valor máximo de
+              250 caracteres
+              foi excedido!</p>
+          </div>
+
+          <ion-item>
+            <ion-label position="floating"><strong>*</strong> Relação conjugal:</ion-label>
+            <ion-select formControlName="vida_conjugal">
+              <ion-select-option value="solteiro">Solteiro(a)</ion-select-option>
+              <ion-select-option value="Casado">Casado(a)</ion-select-option>
+              <ion-select-option value="Divorciado">Divorciado(a)</ion-select-option>
+              <ion-select-option value="Viúvo">Viúvo(a)</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating"><strong>*</strong> Ajustamento familiar:</ion-label>
+            <ion-select formControlName="ajustamento_familiar">
+              <ion-select-option value="Dependente">Dependente</ion-select-option>
+              <ion-select-option value="Mantedor">Mantenedor(ra)</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating"><strong>*</strong> Padrão de sono:</ion-label>
+            <ion-select formControlName="padraosono_valor">
+              <ion-select-option value="regular">Regular</ion-select-option>
+              <ion-select-option value="irregular">Irregular</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>Demora a iniciar o sono?</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+
+          <ion-radio-group formControlName="padraosono_demora_iniciar">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>Acorda durante a noite?</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="padraosono_acorda_durante">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>Acorda antes do horário?</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="padraosono_acorda_antes">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+
+          <ion-item>
+            <ion-label position="floating"><strong>*</strong> Tabagismo:</ion-label>
+            <ion-select formControlName="tabagismo_valor">
+              <ion-select-option value="Atual">Atual</ion-select-option>
+              <ion-select-option value="Ex-tabagista">Ex-tabagista</ion-select-option>
+              <ion-select-option value="Não fuma">Não tabagista</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <!--Este campo só deve ser exibido se o paciente for ex-tabagista-->
+          <ion-item *ngIf="fGroup.value.tabagismo_valor == 'Ex-tabagista'">
+            <ion-label position="floating"><strong>*</strong> Ano e mês:</ion-label>
+            <ion-input  formControlName="tabagismo_anos_maco">
+            </ion-input>
+          </ion-item>
+
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </form>
+</ion-content>

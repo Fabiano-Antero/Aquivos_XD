@@ -1,0 +1,1007 @@
+<ion-content>
+  <form [formGroup]="fGroup" class="bottomTab">
+
+    <!-- Card Inspeção -->
+    <ion-card color="light">
+
+      <ion-card-header color="acard">
+        <ion-card-title class="ion-text-center">
+          <h5><strong>Inspeção</strong></h5>
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list lines="full">
+
+          <!--
+        =======================================================================
+                              Campo Inspeção
+        ======================================================================
+        -->
+          <ion-item>
+
+            <ion-label position="floating"><span>*</span> Tipo do Abdome</ion-label>
+            <ion-select formControlName="abdome_inspecao_tipo_do_abdome">
+              <ion-select-option value="Plao">Plano</ion-select-option>
+              <ion-select-option value="Globoso">Globoso</ion-select-option>
+              <ion-select-option value="Escavado">Escavado</ion-select-option>
+              <ion-select-option value="Avental">Avental</ion-select-option>
+              <ion-select-option value="Batráquio">Batráquio</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <!--Campo Presença de retra...-->
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>Presença de retratações ou Abaulamentos?</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+
+          <ion-radio-group formControlName="abdome_inspecao_presenca_de_retratacoes">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+          <!-- Campo Descrição deverá ser ativado ao clicar no checkbox sim-->
+          <ion-item *ngIf="fGroup.value.abdome_inspecao_presenca_de_retratacoes == 'sim'">
+            <ion-label position="floating"><span>*</span> Descreva:</ion-label>
+            <ion-input type="text" formControlName="abdome_inspecao_presenca_de_retratacoes_descricao"></ion-input>
+          </ion-item>
+
+          <!--Input Cicatris umbilical-->
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>Cicatriz umbilical?</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <!-- Campo posição-->
+          <ion-item>
+
+            <ion-label position="floating"><span>*</span> Tipo Posição:</ion-label>
+            <ion-input type="text" formControlName="abdome_inspecao_cicatriz_umbilical"></ion-input>
+          </ion-item>
+
+          <div *ngIf="fGroup.controls.abdome_inspecao_cicatriz_umbilical.errors">
+            <p *ngIf="fGroup.controls.abdome_inspecao_cicatriz_umbilical.errors.minlength" class="ion-padding-start ">
+              Valo mínimo de caracteres é
+              igual a 2!</p>
+            <p *ngIf="fGroup.controls.abdome_inspecao_cicatriz_umbilical.errors.maxlength" class="ion-padding-start ">O
+              valor máximo de 250 caracteres
+              foi excedido!</p>
+          </div>
+
+
+          <!-- Campo Tipo-->
+
+          <ion-item>
+            <ion-label position="floating"><span>*</span> Tipo</ion-label>
+            <ion-select formControlName="abdome_inspecao_tipo_cicatriz_umbilical">
+              <ion-select-option value="Intrusa">Intrusa</ion-select-option>
+              <ion-select-option value="Protusa">Protusa</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <!--Input Cicatris cirutgica-->
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>Cicatriz cirúrgica?</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="abdome_inspecao_cicatriz_cirurgica">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+          <!-- Campo Descrição deverá ser ativado ao clicar no checkbox sim-->
+          <ion-item *ngIf="fGroup.value.abdome_inspecao_cicatriz_cirurgica == 'sim'">
+            <ion-label position="floating"><span>*</span> Descreva:</ion-label>
+            <ion-input type="text" formControlName="abdome_inspecao_cicatriz_cirurgica_descricao"></ion-input>
+          </ion-item>
+
+          <!-- Campo presença de circulação colateral-->
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>Presença de circulação colateral?</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="abdome_inspecao_presenca_circulacao_colateral">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+          <!-- Campo Descrição deverá ser ativado ao clicar no checkbox sim-->
+          <ion-item *ngIf="fGroup.value.abdome_inspecao_presenca_circulacao_colateral == 'sim'">
+            <ion-label position="floating"><span>*</span> Descreva:</ion-label>
+            <ion-input type="text" formControlName="abdome_inspecao_presenca_circulacao_colateral_descricao">
+            </ion-input>
+          </ion-item>
+
+          <!--Sinal de cullen-->
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>Sinal de culen (equimose periumbilical) ?</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="abdome_inspecao_sinal_de_culen">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+          <!--Sinal de Grey-turner-->
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>Sinal de Grey-turner (equimose nos flancos)</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="abdome_inspecao_sinal_de_gray_turner">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+          <!--Pulsatilidade da aorta abdominal-->
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>Pulsatilidade da aorta abdominal</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="abdome_inspecao_pulsatilidade_da_aorta">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+    <!--Card Percussão-->
+    <ion-card color="light">
+
+      <ion-card-header color="acard">
+        <ion-card-title class="ion-text-center">
+          <h5><strong>Percussão</strong></h5>
+        </ion-card-title>
+      </ion-card-header>
+
+      <!--Card Percussão-->
+      <ion-card-content>
+        <ion-list lines="full">
+
+          <ion-item>
+            <ion-label position="floating"><span>*</span> Tipo</ion-label>
+            <ion-select formControlName="abdome_percussao_som">
+              <ion-select-option value="timpanico">Timpânico</ion-select-option>
+              <ion-select-option value="macico">Maciço</ion-select-option>
+              <ion-select-option value="submacico">Submaciço</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <!--presença de massas-->
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>Presença de massas?</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="abdome_percussao_presenca_de_massas">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+          <!-- Campo Descrição deverá ser ativado ao clicar no checkbox sim-->
+          <ion-item *ngIf="fGroup.value.abdome_percussao_presenca_de_massas == 'sim'">
+            <ion-label position="floating"><span>*</span> Descreva:</ion-label>
+            <ion-input type="text" formControlName="abdome_percussao_presenca_de_massas_descricao"></ion-input>
+          </ion-item>
+
+          <!--hepatomegalida-->
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>Hepatomegalia?</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="abdome_percussao_hepatomegalia">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+          <!-- Campo Descrição deverá ser ativado ao clicar no checkbox sim-->
+          <ion-item *ngIf="fGroup.value.abdome_percussao_hepatomegalia == 'sim'">
+            <ion-label position="floating"><span>*</span> Descreva:</ion-label>
+            <ion-input type="text" formControlName="abdome_percussao_hepatomegalia_descricao"></ion-input>
+          </ion-item>
+
+          <!--Esplenomegalia-->
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>Esplenomegalia?</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="abdome_percussao_esplenomegalia">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+          <!-- Campo Descrição deverá ser ativado ao clicar no checkbox sim-->
+          <ion-item *ngIf="fGroup.value.abdome_percussao_esplenomegalia == 'sim'">
+            <ion-label position="floating"><span>*</span> Descreva:</ion-label>
+            <ion-input type="text" formControlName="abdome_percussao_esplenomegalia_descricao"></ion-input>
+          </ion-item>
+
+          <!--Macicez móvel de decúbito-->
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>Macicez móvel de decúbito</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="abdome_percussao_macicez_movel_de_decubito">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+          <!--Sinal de piparote-->
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>Sinal de piparote</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="abdome_percussao_sinal_de_piparote">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+      
+
+    <!--Palpação superficial e profunda-->
+    <ion-card color="light">
+
+      <!--Card manobras especiais-->
+      <ion-card-header color="acard">
+        <ion-card-title class="ion-text-center">
+          <h5><strong>Palpação superficial e profunda</strong></h5>
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list lines="full">
+
+          <!--Esplenomegalia-->
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>Dor</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="abdome_palpacao_dor">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+          <!-- Campo Descrição deverá ser ativado ao clicar no checkbox sim-->
+          <ion-item *ngIf="fGroup.value.abdome_palpacao_dor == 'sim'">
+            <ion-label position="floating"><span>*</span> Descreva:</ion-label>
+            <ion-input type="text" formControlName="abdome_palpacao_dor_descricao"></ion-input>
+          </ion-item>
+
+          <!--Tensão abdominal-->
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>Tensão abdominal</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="abdome_palpacao_tensao_abdominal">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+          <!--Massas palpáveis-->
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--cabeçalho-->
+                <ion-col>
+                  <ion-text>Massas abdominais</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="abdome_palpacao_massas_abdominais">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+          <!-- Campo Descrição deverá ser ativado ao clicar no checkbox sim-->
+          <ion-item *ngIf="fGroup.value.abdome_palpacao_massas_abdominais == 'sim'">
+            <ion-grid>
+              <ion-row>
+
+                <ion-col>
+                  <ion-label position="floating"><span>*</span> Descreva:</ion-label>
+                  <ion-input type="text" formControlName="abdome_palpacao_massas_abdominais_descricao"></ion-input>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+    <!--divisão-->
+    <ion-item-divider color="asubcard" class="ion-padding">
+      <ion-title class="ion-text-center">
+        Manobras especiais
+      </ion-title>
+    </ion-item-divider>
+
+    <!--Card Manobra Especiais-->
+    <ion-card color="light">
+
+      <!--Card manobras especiais-->
+      <ion-card-header color="acard">
+        <ion-card-title class="ion-text-center">
+          <h5><strong>Manobra de Mathieu</strong></h5>
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list lines="full">
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--Cabeçalho-->
+                <ion-col>
+                  <ion-text>Palpável</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="abdome_manobrasespeciais_mathieu_palpavel">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+          <!---Se for sim-->
+          <!--Consistência-->
+          <div *ngIf="fGroup.value.abdome_manobrasespeciais_mathieu_palpavel == 'sim'">
+
+            <ion-item>
+              <ion-label position="floating"><span>*</span> Consistência</ion-label>
+              <ion-select formControlName="abdome_inspecao_presenca_circulacao_colateral_descricao">
+                <ion-select-option value="Elástica">Elástica</ion-select-option>
+                <ion-select-option value="Fibroelástica">Fibroelástica</ion-select-option>
+                <ion-select-option value="Pétrea">Pétrea</ion-select-option>
+              </ion-select>
+            </ion-item>
+
+            <!--Borda-->
+            <ion-item>
+              <ion-label position="floating"><span>*</span> Borda</ion-label>
+              <ion-select formControlName="abdome_manobrasespeciais_mathieu_borda">
+                <ion-select-option value="Fina">Fina</ion-select-option>
+                <ion-select-option value="Romba">Romba</ion-select-option>
+              </ion-select>
+            </ion-item>
+
+            <!--Superfície-->
+            <ion-item>
+              <ion-label position="floating"><span>*</span> Superfície</ion-label>
+              <ion-select formControlName="abdome_manobrasespeciais_mathieu_superficie">
+                <ion-select-option value="Lisa">Lisa</ion-select-option>
+                <ion-select-option value="Nodular">Nodular</ion-select-option>
+              </ion-select>
+            </ion-item>
+
+            <!--Dolorosa-->
+            <ion-item>
+              <ion-label position="floating"><span>*</span> Dolorosa</ion-label>
+              <ion-select formControlName="abdome_manobrasespeciais_mathieu_dolorosa">
+                <ion-select-option value="sim">Sim</ion-select-option>
+                <ion-select-option value="não">Não</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </div>
+
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+    <!--Card Manobra de Lemos Torres-->
+    <ion-card color="light">
+
+      <!--Card Manobra de Lemos Torres-->
+      <ion-card-header color="acard">
+        <ion-card-title class="ion-text-center">
+          <h5><strong>Manobra de Lemos Torres</strong></h5>
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list lines="full">
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--Cabeçalho-->
+                <ion-col>
+                  <ion-text>Palpável</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="abdome_manobrasespeciais_lemostorres_palpavel">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+          <!---Se for sim-->
+          <!--Consistência-->
+          <div *ngIf="fGroup.value.abdome_manobrasespeciais_lemostorres_palpavel =='sim'">
+            <ion-item>
+              <ion-label>Consistência</ion-label>
+              <ion-select formControlName="abdome_manobrasespeciais_lemostorres_consistencia">
+                <ion-select-option value="Elástica">Elástica</ion-select-option>
+                <ion-select-option value="Fibroelástica">Fibroelástica</ion-select-option>
+                <ion-select-option value="Pétrea">Pétrea</ion-select-option>
+              </ion-select>
+            </ion-item>
+
+            <!--Borda-->
+            <ion-item>
+              <ion-label>Borda</ion-label>
+              <ion-select formControlName="abdome_manobrasespeciais_lemostorres_borda">
+                <ion-select-option value="Fina">Fina</ion-select-option>
+                <ion-select-option value="Romba">Romba</ion-select-option>
+              </ion-select>
+            </ion-item>
+
+            <!--Superfície-->
+            <ion-item>
+              <ion-label>Superfície</ion-label>
+              <ion-select formControlName="abdome_manobrasespeciais_lemostorres_superficie">
+                <ion-select-option value="Lisa">Lisa</ion-select-option>
+                <ion-select-option value="Nodular">Nodular</ion-select-option>
+              </ion-select>
+            </ion-item>
+
+            <!--Dolorosa-->
+            <ion-item>
+              <ion-label>Dolorosa</ion-label>
+              <ion-select formControlName="abdome_manobrasespeciais_lemostorres_dolorosa">
+                <ion-select-option value="sim">Sim</ion-select-option>
+                <ion-select-option value="não">Não</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </div>
+
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+    <!--Card Manobra de Lemos Torres-->
+    <ion-card color="light">
+
+      <!--Card Manobra de Lemos Torres-->
+      <ion-card-header color="acard">
+        <ion-card-title class="ion-text-center">
+          <h5><strong>Manobras de Shuster</strong></h5>
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list lines="full">
+
+          <ion-item lines="none" color="asubcard">
+            <ion-grid>
+              <ion-row>
+
+                <!--Cabeçalho-->
+                <ion-col>
+                  <ion-text>Palpável</ion-text>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </ion-item>
+
+          <ion-radio-group formControlName="abdome_manobrasespeciais_manobra_de_shuster_palpavel">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Sim</ion-text>
+                    <ion-radio value="sim"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>Não</ion-text>
+                    <ion-radio value="não"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-text>NQN</ion-text>
+                    <ion-radio value="Não questionado"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+          <div *ngIf="fGroup.value.abdome_manobrasespeciais_manobra_de_shuster_palpavel =='sim'">
+            <ion-item>
+              <ion-label position="floating"><span>*</span>Ciclo Cardiaco:</ion-label>
+              <ion-select formControlName="abdome_manobrasespeciais_sinal_de_murphy">
+                <ion-select-option value="Positivo">Positivo</ion-select-option>
+                <ion-select-option value="Negativo">Negativo</ion-select-option>
+              </ion-select>
+            </ion-item>
+
+
+
+            <ion-item>
+              <ion-label position="floating"><span>*</span>Sinal de Blumberg (Ponto de McBurney):</ion-label>
+              <ion-select formControlName="abdome_manobrasespeciais_sinal_de_blemberg">
+                <ion-select-option value="Positivo">Positivo</ion-select-option>
+                <ion-select-option value="Negativo">Negativo</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </div>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+  
+    <ion-button class="ion-padding-horizontal ion-margin-bottom ion-margin-top" color="dark" expand="full"
+      (click)="sendToApi()" [disabled]="!identService.verificador()" expand="block">enviar
+    </ion-button>
+  </form>
+</ion-content>

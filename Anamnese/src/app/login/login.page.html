@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="fGroup" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label position="floating">E-mail</ion-label>
+      <ion-input type="text" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Senha</ion-label>
+      <ion-input type="password" formControlName="matricula"></ion-input>
+    </ion-item>
+    <ion-button expand="full" class="ion-item-aling-right" shape="round"  [disabled]="!fGroup.valid">Logar</ion-button>
+    <div >
+
+  
+      
+    </div>
+  </form>
+  
+</ion-content>

@@ -1,0 +1,266 @@
+<ion-content>
+  <form [formGroup]="fGroup" class="bottomTab">
+
+    <ion-item-divider color="asubcard" class="ion-padding">
+      <ion-title class="ion-text-center">
+        Sintomas gerais
+      </ion-title>
+    </ion-item-divider>
+
+    <ion-card color="light">
+
+      <ion-card-header color="acard">
+        <ion-card-title class="ion-text-center">
+          <h5><strong>Sintoma</strong></h5>
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list lines="full">
+
+          <ion-item>
+            <ion-label position="floating"><span>*</span>Faça uma breve descrição:</ion-label>
+            <ion-input type="text" formControlName="sintomas"></ion-input>
+          </ion-item>
+
+          <div *ngIf="fGroup.controls.sintomas.errors">
+            <p *ngIf="fGroup.controls.sintomas.errors.maxlength"
+              class="ion-padding-start ">Valo máximo de caracteres é
+              250!</p>
+          </div>
+
+
+          <ion-item>
+            <ion-label position="floating"><span>*</span>Por quanto tempo?</ion-label>
+            <ion-input type="text" formControlName="tempo"></ion-input>
+          </ion-item>
+
+          <div *ngIf="fGroup.controls.tempo.errors">
+            <p *ngIf="fGroup.controls.tempo.errors.maxlength"
+              class="ion-padding-start ">Valo máximo de caracteres é
+              250!</p>
+          </div>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Card Febre -->
+    <ion-card color="light">
+
+      <ion-card-header color="acard">
+        <ion-card-title class="ion-text-center">
+          <h5><strong>Apresenta Febre?</strong></h5>
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list lines="full">
+
+          <ion-radio-group formControlName="febre_presenca">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col *ngFor="let lista of febre">
+                  <ion-item>
+                    <ion-text>{{ lista.nome }}</ion-text>
+                    <ion-radio value="{{ lista.valor }}"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+          <!--Input number, captura de temperatura-->
+
+          <ion-item *ngIf="fGroup.value.febre_presenca == 'sim'">
+
+            <ion-label position="floating"><span>*</span>Quantos graus?</ion-label>
+            <ion-input type="text" formControlName="febre_valor"></ion-input>
+          </ion-item>
+
+          <div *ngIf="fGroup.controls.febre_valor.errors">
+            <p *ngIf="fGroup.controls.febre_valor.errors.maxlength"
+              class="ion-padding-start ">Valo máximo de caracteres é
+              250!</p>
+          </div>
+
+          <ion-item *ngIf="fGroup.value.febre_presenca ==  'sim'">
+            <ion-label position="floating"><span>*</span>Por quanto tempo?</ion-label>
+            <ion-input type="text" formControlName="febre_tempo"></ion-input>
+          </ion-item>
+
+          <div *ngIf="fGroup.controls.febre_tempo.errors">
+            <p *ngIf="fGroup.controls.febre_tempo.errors.maxlength"
+              class="ion-padding-start ">Valo máximo de caracteres é
+              250!</p>
+          </div>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Card Alterações de peso -->
+    <ion-card color="light">
+
+      <ion-card-header color="acard">
+        <ion-card-title class="ion-text-center">
+          <h5><strong>Presença de alteração de peso?</strong></h5>
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list lines="full">
+
+          <!--
+             Checkbox: <ion-label>Sim</ion-label>, <ion-label>Não</ion-label> e <ion-label>Não</ion-label> questionado.
+             Obs: Ao selecionar o checkbox de opção <ion-label>Sim</ion-label>, o campo de input 
+                 Que receberá o período de tempo da alteraçãode peso do paciente deverá ser ativado. 
+                 Preferencialmente se possível ele deverá permanecer 
+                 oculto, porém se não houver essa possibilidade ele deverá permanecer desabilitado.
+           -->
+          <ion-radio-group formControlName="alteracao_peso_presenca">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col *ngFor="let lista of peso">
+                  <ion-item>
+                    <ion-text>{{ lista.nome }}</ion-text>
+                    <ion-radio value="{{ lista.valor }}"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+
+          <!--Input text, captura de período de tempo-->
+          <ion-item *ngIf="fGroup.value.alteracao_peso_presenca == 'sim'">
+            <ion-label position="floating"><span>*</span>Peso:</ion-label>
+            <ion-input type="text" formControlName="alteracao_peso_valor">
+            </ion-input>
+          </ion-item>
+
+          <div *ngIf="fGroup.controls.alteracao_peso_valor.errors">
+            <p *ngIf="fGroup.controls.alteracao_peso_valor.errors.maxlength"
+              class="ion-padding-start ">Valo máximo de caracteres é
+              250!</p>
+          </div>
+          
+          <ion-item *ngIf="fGroup.value.alteracao_peso_presenca == 'sim'">
+                  <ion-label position="floating"><span>*</span>Alteração do peso: </ion-label>
+                  <ion-input type="text" formControlName="alteracao_peso_valor_peso">
+                  </ion-input>
+          </ion-item>
+
+          <div *ngIf="fGroup.controls.alteracao_peso_valor_peso.errors">
+            <p *ngIf="fGroup.controls.alteracao_peso_valor_peso.errors.maxlength"
+              class="ion-padding-start ">Valo máximo de caracteres é
+              250!</p>
+          </div>
+
+          <ion-item *ngIf="fGroup.value.alteracao_peso_presenca == 'sim'">
+            <ion-label position="floating"><span>*</span>Em quanto tempo?</ion-label>
+                  <ion-input type="text" formControlName="alteracao_peso_tempo">
+                  </ion-input>
+          </ion-item>
+
+          <div *ngIf="fGroup.controls.alteracao_peso_tempo.errors">
+            <p *ngIf="fGroup.controls.alteracao_peso_tempo.errors.maxlength"
+              class="ion-padding-start ">Valo máximo de caracteres é
+              250!</p>
+          </div>
+
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Card Sudorese -->
+
+    <ion-card color="light">
+
+      <ion-card-header color="acard">
+        <ion-card-title class="ion-text-center">
+          <h5><strong>Sudorese?</strong></h5>
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list lines="full">
+
+          <ion-radio-group formControlName="sudoreses">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col *ngFor="let lista of sudorese">
+                  <ion-item>
+                    <ion-text>{{ lista.nome }}</ion-text>
+                    <ion-radio value="{{ lista.valor }}"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Card Calafrios -->
+
+    <ion-card color="light">
+
+      <ion-card-header color="acard">
+        <ion-card-title class="ion-text-center">
+          <h5><strong>Calafrios?</strong></h5>
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list lines="full">
+
+          <ion-radio-group formControlName="calafrios">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col *ngFor="let lista of calafrios">
+                  <ion-item>
+                    <ion-text>{{ lista.nome }}</ion-text>
+                    <ion-radio value="{{ lista.valor }}"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Card Cãibras -->
+
+    <ion-card color="light">
+
+      <ion-card-header color="acard">
+        <ion-card-title class="ion-text-center">
+          <h5><strong>Cãibras?</strong></h5>
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list lines="full">
+          <ion-radio-group formControlName="caibras">
+            <ion-grid>
+              <ion-row class="ion-nowrap">
+                <ion-col *ngFor="let lista of caibras">
+                  <ion-item>
+                    <ion-text>{{ lista.nome }}</ion-text>
+                    <ion-radio value="{{ lista.valor }}"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-radio-group>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button color="dark" expand="block" [routerLink]="['/novo/isda2']">Próximo</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
